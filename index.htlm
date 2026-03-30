@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freya魔法精油完整目錄｜翡翠之光奧義學院</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 24px 16px 48px; background: linear-gradient(135deg, #1a0033 0%, #2d1500 100%); color: #d4af37; font-family: 'Noto Serif TC', serif; min-height: 100vh; }
+    .container { max-width: 480px; margin: 0 auto; }
+    h1 { font-size: 1.55rem; font-weight: 700; text-align: center; color: #ffd700; line-height: 1.5; margin-bottom: 0.3rem; }
+    .subtitle { text-align: center; font-size: 0.95rem; color: #c5a028; letter-spacing: 1px; margin-bottom: 1.8rem; }
+    .oracle-box, .oil-box { border: 1px solid #d4af37; border-radius: 10px; padding: 1.2rem; background: rgba(80,20,120,0.38); text-align: center; margin-bottom: 1.2rem; }
+    .oracle-box p, .oil-box p { color: #f5e6c8; font-size: 0.88rem; margin: 0.4rem 0; }
+    .box-title { color: #ffd700; font-size: 1.05rem; letter-spacing: 2px; margin-bottom: 0.6rem; }
+    .oil-imgs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 0.8rem 0; }
+    .oil-imgs img { height: 200px; width: auto; border-radius: 10px; border: 1px solid rgba(212,175,55,0.5); object-fit: cover; }
+    .cat-title { font-size: 1.2rem; font-weight: 700; color: #ffd700; border-bottom: 1px solid #d4af37; padding-bottom: 0.5rem; margin: 2rem 0 1rem; letter-spacing: 2px; text-align: center; }
+    details { background: rgba(80,20,120,0.45); border: 1px solid #d4af37; border-radius: 8px; margin-bottom: 0.85rem; overflow: hidden; }
+    summary { padding: 1rem 1.1rem; font-weight: 700; font-size: 1rem; color: #ffd700; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+    summary::after { content: "▼"; font-size: 0.75rem; color: #d4af37; transition: transform 0.25s; }
+    details[open] summary::after { transform: rotate(180deg); }
+    summary::-webkit-details-marker { display: none; }
+    .dc { padding: 1.1rem 1.2rem 1.3rem; border-top: 1px dashed rgba(212,175,55,0.45); background: rgba(60,10,100,0.6); font-size: 0.92rem; line-height: 1.85; color: #f5e6c8; }
+    .dc p { color: #f5e6c8; margin: 0.35rem 0; }
+    .dc strong { color: #ffd700; }
+    .price { font-weight: 700; font-size: 1rem; color: #f1d570; text-align: center; margin: 1rem 0; }
+    .btn { display: block; text-align: center; background: #d4af37; color: #1a0033; font-weight: 700; letter-spacing: 1px; padding: 0.75rem 1rem; border-radius: 5px; text-decoration: none; margin-top: 0.5rem; }
+    .btn:hover { background: #ffd700; }
+    .btn-line { display: inline-block; background: #06C755; color: #fff; font-weight: 700; padding: 0.6rem 1.4rem; border-radius: 5px; text-decoration: none; margin-top: 0.8rem; }
+    .footer { margin-top: 3.5rem; border-top: 1px solid #d4af37; padding-top: 1.8rem; text-align: center; font-size: 0.9rem; line-height: 2; color: #d4af37; }
+    .footer a { color: #f1d570; }
+    .copy { font-size: 0.75rem; opacity: 0.6; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>✨ 翡翠之光奧義學院 ✨<br/>The Emerald Light Mystery School</h1>
+  <p class="subtitle">Freya's Love Magic ｜ 意識提升魔法精油</p>
+  <div class="oracle-box">
+    <div class="box-title">🃏 高我連結・天賦解讀神諭卡</div>
+    <p>Divine Gifts Oracle Reading Cards</p>
+    <p style="font-size:0.82rem;color:#c5a028;margin-top:0.3rem;">翡翠之光奧義文化事業有限公司出版</p>
+    <p style="font-size:0.82rem;color:#c5a028;">透過神諭卡連結你的高我，解讀靈魂天賦與人生使命</p>
+    <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn-line">✦ LINE 私訊詢問牌卡 ✦</a>
+  </div>
+  <div class="oil-box">
+    <div class="box-title">🌿 Freya's Love Magic 手製魔法精油</div>
+    <p>純天然手製複方精油 · 意識提升魔法油</p>
+    <div class="oil-imgs">
+      <img src="https://iili.io/BHY1lOQ.png" alt="魔法滾珠精油瓶"/>
+      <img src="https://iili.io/BHY1Sst.png" alt="魔法滾珠精油瓶"/>
+    </div>
+    <p style="font-size:0.78rem;color:#d4af37;">✦ 手工調製 · 純天然植物精油 · 靈性意圖注入 ✦</p>
+  </div>
+  <div class="cat-title">【感情愛情系列】 🌹</div>
+  <details><summary>1. 魅力 Charisma</summary><div class="dc"><p><strong>功效：</strong>增強氣場・自信・吸引真愛</p><p>這款魔法精油可以當作香水使用，功能是增強氣場、自信與魅力。成分有乳香、法國進口麝香、沒藥樹脂等。如果你常常感覺沒有安全感、沒有自信、士氣低落、沒有桃花，這是一款適合你的精油。讓女人放鬆，放掉想與男人競爭的潛意識，成為真實的女人，吸引契合的陽性能量。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>2. 愛的新開始 New Start for Love</summary><div class="dc"><p><strong>功效：</strong>斬斷舊愛創傷・吸引新感情</p><p>如果在你的能量場中，仍然有舊愛的創傷、委屈、憤怒等負面振動殘留，你很難吸引到更完滿的新伴侶。老巫調和純茉莉花精油、大馬士革玫瑰、丁香花苞、乳香等名貴成分。擦拭後你的意識馬上變得清新愉快，彷彿回到情竇初開的少女時代，打開心輪，讓周遭聞到香味的異性都對你怦然心動。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>3. 私奔 Elopement</summary><div class="dc"><p><strong>功效：</strong>提升親密感・吸引力・自信</p><p>在愛情中如果感到不自信，不能在親密關係中放鬆，這款就是為你特別調製的神油。除了麝香、乳香與玫瑰天竺葵等催情複方成分，還有羅馬洋甘菊、薰衣草等讓身心放鬆的成分，氣味高雅又性感，讓你成為回頭率三百的發電機！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>4. 黑天鵝 Black Swan</summary><div class="dc"><p><strong>功效：</strong>展現獨特魅力・突破角色限制</p><p>展現你最獨特的一面，突破社會給你的角色框架，活出黑天鵝般的神秘優雅與不可思議的魅力。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="cat-title">【豐盛財富系列】 💰</div>
+  <details><summary>5. 豐盛之流 Prosperity Flow</summary><div class="dc"><p><strong>功效：</strong>活出豐盛女神的能量</p><p>成分非常複雜，成本很高，使用現磨沒藥樹脂、進口丁香花苞精油、印度決明子精油等。擦在身上，會產生一種走到哪裡自己都是老闆娘、豐盛女神、想要分享的感受。自從老巫開始擦這款精油後，家裡每天被學生送的食物堆滿，貴人很多，到哪裡都是賺錢的機會！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>6. 財富磁石 Business Boosting</summary><div class="dc"><p><strong>功效：</strong>錢滾錢・擴展版圖</p><p>Wiccan派系配方，使用自家種植的巴西利搗碎加上生薑精油與乳香製成。不建議擦在身上，而是要擦在錢包、紙鈔、名片、文宣上面。實驗擦在皮包與鈔票上，花一張小朋友回來兩張，是非常厲害的魔法配方！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>7. 神走運 Super Lucky</summary><div class="dc"><p><strong>功效：</strong>神賜好運・突破運氣瓶頸</p><p>高我傳訊創造的魔法精油，裡面有很多 lucky 7 的數字，以及提升免疫力、自信與放鬆的精油成分。使用時帶著信念：「今天不管我要做什麼，我都會一帆風順！」然後你需要的一切，都會被宇宙供給。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>8. 冬藏 Winter Harvesting</summary><div class="dc"><p><strong>功效：</strong>告別月光族・累積財富成果</p><p>告別月光族，停止財富流失，開始累積真正屬於你的財富果實。如同冬藏的智慧，幫助你守住豐收，建立穩固的物質基礎。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="cat-title">【天賦成長系列】 🦋</div>
+  <details><summary>9. 天賦 Talents ⭐</summary><div class="dc"><p><strong>功效：</strong>開展天賦才華・突破恐懼</p><p>人們常因為擁有太多憂慮恐懼、低頻想法，導致無法發現自己的天賦才華。成分有伊蘭、百里香、安息香、沒藥、檀香、玫瑰、甜橙等複方。一擦在身上，情緒就安定，身心靈感覺落地、平安，幫助使用者能在自然放鬆的狀態下，突破恐懼，開展天賦才華。</p><div class="price">15ml NT$1,888 ／ 30ml NT$2,800</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>10. 做自己 Be Yourself</summary><div class="dc"><p><strong>功效：</strong>勇敢表達・活出真實自我</p><p>適合害怕做自己會得罪人的你、需要全世界鼓勵才敢跨出一步的你、喉輪卡卡無法說出真心話的你、每天忙別人的事而不是自己夢想的你！這款油就是教你阿莎力人生致勝法的救命恩人！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>11. 我值得 Self Worthiness</summary><div class="dc"><p><strong>功效：</strong>提升內在配得感・吸引豐盛</p><p>深層提升你的內在配得感，讓你真正相信自己值得被愛、值得豐盛、值得幸福。當你的振動頻率升高，豐盛自然流入你的生命。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>12. 聚焦 Focus</summary><div class="dc"><p><strong>功效：</strong>專注目標・不再分心</p><p>幫助你在紛亂的世界中找回內在的定靜，將能量聚焦在真正重要的事情上，讓目標清晰可見，行動有力而堅定。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="cat-title">【靈性保護系列】 🔮</div>
+  <details><summary>13. 尊貴紫火 Noble Violet Flame</summary><div class="dc"><p><strong>功效：</strong>小人退散・吸引貴人</p><p>紫色火焰是揚升大師聖哲曼與大天使薩吉爾給地球的禮物，可以淨化一切。使用時不需要防備任何小人，神聖尊貴紫色火焰會穿透來到你面前的人的內心，軟化算計的小我心識，自然而然讓他們願意成就你。成分有茉莉精油、乳香、薰衣草、喜瑪拉雅山雪松。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>14. 神聖保護 Divine Protection</summary><div class="dc"><p><strong>功效：</strong>驅散負能量・神聖防護</p><p>媽媽與療癒師必備。遇見能量吸血鬼、負面能量侵襲時，常見反應有莫名頭痛、昏沉、心輪悶痛、莫名憂鬱等。將精油抹在太陽穴、心口、頂輪等位置，運用西伯利亞雪松、澳洲白鼠尾草、艾草等神聖植物的力量，可以驅散邪寒能量，召喚神聖保護。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>15. 聖殿 Sacred Altar</summary><div class="dc"><p><strong>功效：</strong>淨化水晶礦石・神聖空間</p><p>加了高貴的檀香、乳香、西伯利亞冷杉、沒藥等成分，可以拿來擦拭水晶礦石、祭壇、頌缽、雕像。也可以隨身攜帶，在需要靜心時擦在眉心，高雅聖潔的味道會淨化身心靈，讓自己成為更潔淨的管道，與天使、光的存有們連結。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>16. 天使之心 Angel's Heart</summary><div class="dc"><p><strong>功效：</strong>召喚天使・保持喜悅頻率</p><p>當歸的英文學名 angelica root 可以召喚天使。但更重要的是我們本身心的頻率必須是平和喜悅的，才能允許天使長期與我們同在。成分有當歸、檸檬、綠薄荷、乳香，氣味讓你心情甜美舒暢，感覺生命瞬間又充滿希望。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="cat-title">【療癒轉化系列】 🌸</div>
+  <details><summary>17. 自愛 Self Love</summary><div class="dc"><p><strong>功效：</strong>克服自我攻擊・深度愛自己</p><p>協助克服內在對自己的敵意，帶來自我滿足的喜悅，體會深刻自我深愛。成分有馬鬱蘭（無所畏懼的自信）、羅馬洋甘菊（善意與溫柔）、玫瑰草（克服憂鬱）、丁香花苞（壯大心靈）、茶樹等。祝福所有使用者都能徹底愛上自己，不再向外索取關注與自我攻擊。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>18. 承諾 Commitment</summary><div class="dc"><p><strong>功效：</strong>穩定落地・築夢踏實</p><p>外星老公指定研發。承諾是允許靈魂成長的動力。添加了茶樹、西伯利亞雪松、玫瑰、伊蘭、甜茴香等，氣味高雅耐聞，幫助你穩定身心、落地耕耘，築夢踏實。在關係中，送這瓶精油等於告訴你的愛人：我願意好好的愛你，與你長久走下去！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>19. 信任 Trust</summary><div class="dc"><p><strong>功效：</strong>相信自己・顯化奇蹟</p><p>There can be miracles, when you believe. 哪怕你一無所有，但凡你相信自己的夢想與奇蹟，就沒有做不到的事情。高我說：「相信即福德，信任即救贖。」你是否太過在意外人的評價？你是否總是在第一個挫折時就舉白旗？這款精油幫助你重建對自己的信任，顯化奇蹟。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>20. 圓滿 Wholeness</summary><div class="dc"><p><strong>功效：</strong>內在圓滿・平安喜悅</p><p>真正重要的是來自上主恩典的圓滿心識，讓我們在看似缺憾的人生中，莫名感受到平安與喜悅充盈的愛的感受。成分有玫瑰天竺葵、乳香、安息香、當歸等，完全手作不含防腐劑，協助每一個勇敢的地球勇士圓滿自己的學習。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="cat-title">【力量突破系列】 ⚡</div>
+  <details><summary>21. 戰士甦醒 Warrior Awakens</summary><div class="dc"><p><strong>功效：</strong>喚醒內在戰士・突破恐懼</p><p>薩滿高我強而有力要求研發的精油。只有喚醒內在的戰士魂，你才會有力量走出受害者心識，斬斷害你停滯不前的墮落業息！成分有薑、羅勒、乳香、冷杉、肉桂、檸檬，喚醒你的勇氣與力量，幫助你克服負面心智。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>22. 勝利 Victory</summary><div class="dc"><p><strong>功效：</strong>打官司・考試・升遷必備</p><p>為了孩子爭取監護權官司過程中研發。觀察到的進步：耐心、毅力、堅持、信任。成分有廣藿香（強心）、檀香、乳香（降低心靈依賴）、冷杉（堅毅）、麝香（鎮靜放鬆）。打官司必備！考試必備！升遷考核必備！</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>23. 浴火鳳凰 Phoenix ⭐</summary><div class="dc"><p><strong>功效：</strong>谷底重生・麻雀變鳳凰</p><p>獻給所有正在最低谷的你，從灰燼中重生，如鳳凰般展翅高飛。當你以為一切都結束了，那正是最偉大的轉化即將發生的時刻。</p><div class="price">15ml NT$1,888 ／ 30ml NT$2,800</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>24. 大師 Master</summary><div class="dc"><p><strong>功效：</strong>駕馭生命・成為自己領域的大師</p><p>完全按照 voodoo 魔法油配方調製，本名 Domination oil。讓你能有力量駕馭自己的生命、處境、事業、關係，成為自己領域的大師，精通任何渴望駕馭的領域。成分有香根草、丁香、乳香、菖蒲，氣味比較陽性，男性也很適合使用。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>25. 夢行者 Dreamers ⭐</summary><div class="dc"><p><strong>功效：</strong>清醒夢・深化潛意識探索</p><p>意識魔法的啟蒙者。添加了馬鬱蘭、洋甘菊、玫瑰天竺葵、薰衣草、檀香等多達十種精油，能迅速幫助放鬆緊繃神經，轉變腦波頻率到入夢的 alpha 橋樑波頻，加深深睡後 Theta 腦波的活躍程度。適合睡眠障礙與渴望成為夢行者的你！</p><div class="price">15ml NT$1,888 ／ 30ml NT$2,800</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <details><summary>26. 謬思 Muse</summary><div class="dc"><p><strong>功效：</strong>創意靈感・創造豐盛</p><p>召喚繆思女神的靈感，讓創意源源不絕湧現。不管你是藝術家、創業者、老師或任何需要創意的工作者，這款精油幫助你打開靈感之門，讓宇宙的創造能量流過你，創造出令人驚嘆的豐盛作品。</p><div class="price">15ml NT$1,688 ／ 30ml NT$2,600</div><a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn">✦ LINE 私訊訂購 ✦</a></div></details>
+  <div class="footer">
+    <p><strong>✦ 聯絡我們・訂購諮詢 ✦</strong></p>
+    <p>🟢 LINE：<a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank">@emeraldsolis777</a></p>
+    <p>📘 Facebook：<a href="https://m.me/100037961756840" target="_blank">Freya Chen</a></p>
+    <p>📞 電話：+886-968-665-908</p>
+    <p class="copy">© The Emerald Light Mystery School · All Rights Reserved.</p>
+  </div>
+</div>
+</body>
+</html>
