@@ -64,7 +64,8 @@
   <!-- ===== 抽牌選精油區塊 ===== -->
   <div id="draw-section" style="border:2px solid #d4af37;border-radius:14px;padding:1.4rem 1.2rem 1.6rem;background:rgba(50,10,90,0.55);text-align:center;margin-bottom:2rem;">
     <div class="box-title" style="font-size:1.15rem;letter-spacing:3px;margin-bottom:0.4rem;">🔮 高我神諭卡・抽牌選精油</div>
-    <p style="color:#f5e6c8;font-size:0.88rem;margin-bottom:1rem;">靜心片刻，問出你心中的問題<br/>然後點擊下方按鈕，讓高我為你指引今日所需的精油</p>
+    <p style="color:#f5e6c8;font-size:0.88rem;margin-bottom:0.5rem;">你的靈魂，正在等待被看見。</p>
+    <p style="color:#c5a028;font-size:0.82rem;margin-bottom:1rem;">靜心片刻，在心中默問：<br/>「<em>此刻，我最需要什麼能量的支持？</em>」<br/>然後，讓你的高我為你選一張牌⋯⋯</p>
     <button id="draw-btn" onclick="drawCard()" style="background:linear-gradient(135deg,#7b2d8b,#d4af37);color:#fff;font-weight:700;font-size:1.05rem;padding:0.85rem 2rem;border:none;border-radius:8px;cursor:pointer;letter-spacing:2px;width:100%;max-width:320px;">✨ 抽一張牌 ✨</button>
     <div id="card-result" style="display:none;margin-top:1.2rem;"></div>
   </div>
@@ -112,50 +113,50 @@
 </div>
 <script>
 const CARDS = [
-  { name:"真實的英雄", eng:"The True Hero", msg:"你天生具備俠義心腸與領導力，勇於為他人挺身而出。豐盛密碼：勇敢說出自己的需求，先滿足自己再幫助他人。", oils:["做自己 Be Yourself","自愛 Self Love","私奔 Elopement","冬藏 Winter Harvesting"] },
-  { name:"太陽：光明的源頭", eng:"The Sun", msg:"你擁有明星特質與完美主義，渴望透過活出自我來啟發他人。豐盛來自坦誠分享生命經驗，照亮周遭的人。", oils:["信任 Trust","黑天鵝 Black Swan","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
-  { name:"勝利者", eng:"The Victor", msg:"你熱愛競爭，越挫越勇，具強大爆發力與策略思維。你天生是贏家，豐盛來自以競爭推動進步。", oils:["勝利 Victory","做自己 Be Yourself","大師 Master","天賦 Talents","豐盛之流 Prosperity Flow","自愛 Self Love"] },
-  { name:"天使之翼", eng:"Angel Wings", msg:"你具高度慈悲心與藝術氣質，在情感上敏感脆弱。學習不以理想化的愛情定義自己，你本身即是完整的。", oils:["天使之心 Angel's Heart","自愛 Self Love","愛的新開始 New Start for Love","信任 Trust","黑天鵝 Black Swan"] },
-  { name:"白蓮", eng:"White Lotus", msg:"你如現代修士般喜愛簡樸自然，追求內在和平。你的天賦是帶領他人找到生命中真正的平衡與靜心。", oils:["戰士甦醒 Warrior Awakens","天賦 Talents","豐盛之流 Prosperity Flow","謬思 Muse","承諾 Commitment","大師 Master"] },
-  { name:"金礦河", eng:"Gold River", msg:"你具冒險精神，擅長從平凡中發現致富機會。你的豐盛來自勇於探索，並學習管理生活細節與財務。", oils:["承諾 Commitment","謬思 Muse","做自己 Be Yourself","神走運 Super Lucky","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
-  { name:"金色飛船", eng:"Golden Spaceship", msg:"你具備強大聚合力，能號召志同道合者共圓夢想。你的使命是為特定族群發聲，傳遞宏大願景。", oils:["夢行者 Dreamers","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","做自己 Be Yourself","黑天鵝 Black Swan","魅力 Charisma"] },
-  { name:"土象金元寶", eng:"Earth Gold", msg:"你是務實的理財高手，天賦是放大他人財富。用財富造福所愛之人，創造真正的幸福與安全感。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","魅力 Charisma","私奔 Elopement"] },
-  { name:"淨化者", eng:"The Purifier", msg:"你天生是療癒者，能平息衝突、轉化能量場。豐盛來自忠於內心，傳達超越二元對立的愛與光。", oils:["天使之心 Angel's Heart","做自己 Be Yourself","大師 Master","神聖保護 Divine Protection","尊貴紫火 Noble Violet Flame","天賦 Talents"] },
-  { name:"紅色大地", eng:"Red Earth", msg:"你具野心與抱負，擅長以懷柔政策達成長期目標。你擁有強大管理能力，需學習放下控制欲。", oils:["魅力 Charisma","私奔 Elopement","黑天鵝 Black Swan","勝利 Victory"] },
-  { name:"金色雲海", eng:"Golden Clouds", msg:"你是受良好保護的幸運兒，特質純真浪漫。你對金錢有潛在恐懼，需學習獨立自主，相信自己的豐盛。", oils:["承諾 Commitment","冬藏 Winter Harvesting","自愛 Self Love","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","謬思 Muse"] },
-  { name:"藍色人魚", eng:"Blue Mermaid", msg:"你具獨特通靈能力，是連結不同維度的管道。你的豐盛來自勇敢穿越情感考驗，信任自己的獨特天賦。", oils:["謬思 Muse","天賦 Talents","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","信任 Trust","做自己 Be Yourself"] },
-  { name:"莫內花園", eng:"Monet's Garden", msg:"你是極度幸運的顯化者，能將才華轉化為名利。你的使命是透過分享熱情與喜樂感染並啟發周遭的人。", oils:["豐盛之流 Prosperity Flow","財富磁石 Business Boosting","冬藏 Winter Harvesting","謬思 Muse","信任 Trust","魅力 Charisma"] },
-  { name:"聖愛女神", eng:"Goddess of Sacred Love", msg:"你的人生充滿波折，但能透過內在力量轉化逆境。你擅長寬恕，是走過苦難後閃耀的心靈導師。", oils:["黑天鵝 Black Swan","大師 Master","天賦 Talents","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","豐盛之流 Prosperity Flow","財富磁石 Business Boosting"] },
-  { name:"老鷹之翼", eng:"Eagle Wings", msg:"你是富有智慧的老靈魂，具宏觀視野與自律。你需平衡對伴侶的陪伴與獨處需求，在高處飛翔又紮根大地。", oils:["信任 Trust","私奔 Elopement","承諾 Commitment","魅力 Charisma","夢行者 Dreamers"] },
-  { name:"夢行者", eng:"Dream Walker", msg:"你能預知夢並進行潛意識工作，是真正的顯化大師。你的天賦是教導世人如何透過夢境的力量改變命運。", oils:["信任 Trust","私奔 Elopement","承諾 Commitment","魅力 Charisma","夢行者 Dreamers"] },
-  { name:"富麗堂皇", eng:"Magnificent", msg:"你具領袖氣質與極佳品味，能輕易顯化豐盛物質生活。你需要堅定承諾，才能將宏大願景落實為現實。", oils:["承諾 Commitment","做自己 Be Yourself","尊貴紫火 Noble Violet Flame","魅力 Charisma","豐盛之流 Prosperity Flow"] },
-  { name:"金色甘露", eng:"Golden Nectar", msg:"你看似隨性，但一切皆在神聖計畫之中。你是集體揚升的催化劑，你的存在能引發他人的覺醒與蛻變。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","戰士甦醒 Warrior Awakens","夢行者 Dreamers"] },
-  { name:"紫色仙境", eng:"Purple Wonderland", msg:"你溫柔而強大，具有與植物和精靈溝通的天賦。你擅長食療與守護親友，需克服對失去與分離的恐懼。", oils:["尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","天賦 Talents","謬思 Muse","戰士甦醒 Warrior Awakens"] },
-  { name:"藍風暴", eng:"Blue Storm", msg:"你能在災難中獲得意識的揚升。你具高冷氣質與極致專注力，能帶領他人突破看似無法跨越的重重危機。", oils:["豐盛之流 Prosperity Flow","戰士甦醒 Warrior Awakens","天使之心 Angel's Heart","自愛 Self Love","承諾 Commitment"] },
-  { name:"橘色宇宙", eng:"Orange Universe", msg:"你是特立獨行的行為藝術家，具有神秘學天份。你重視個人界線，豐盛的流動來自深深的愛與充足的耐心。", oils:["私奔 Elopement","魅力 Charisma","謬思 Muse","信任 Trust","大師 Master","做自己 Be Yourself"] },
-  { name:"冰晶匯流", eng:"Ice Crystal Confluence", msg:"你是資源整合者與外交官，能跨文化交流並預見他人命運。你擅長調和紛爭，統整眾多力量成就大事。", oils:["愛的新開始 New Start for Love","天賦 Talents","承諾 Commitment","豐盛之流 Prosperity Flow"] },
-  { name:"神聖河流", eng:"Sacred River", msg:"你的內在具強大韌性與源源不絕的生命力。你能以不批判的愛轉化他人，被視為神聖的大地母親。", oils:["自愛 Self Love","天使之心 Angel's Heart","豐盛之流 Prosperity Flow","神走運 Super Lucky","魅力 Charisma"] },
-  { name:"紅頂藝人", eng:"Red Top Artist", msg:"你是舞台上的明星，是超級完美主義者。你願意投入巨大精力磨練才華，你的天賦是透過表演啟發眾人。", oils:["做自己 Be Yourself","魅力 Charisma","天賦 Talents","豐盛之流 Prosperity Flow","謬思 Muse","夢行者 Dreamers"] },
-  { name:"雲中霧", eng:"Cloud & Mist", msg:"你是富想像力的夢想家，能連結眾人的夢想藍圖。你適合開發大眾的創造力，統籌規劃並實現大型計畫。", oils:["承諾 Commitment","謬思 Muse","神聖保護 Divine Protection","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","夢行者 Dreamers"] },
-  { name:"生命源頭", eng:"Source of Life", msg:"你的身體能隨環境進化，對健康議題高度敏感。你此生的使命是展示心靈意識如何深刻影響物理基因。", oils:["天賦 Talents","天使之心 Angel's Heart","自愛 Self Love","愛的新開始 New Start for Love","信任 Trust"] },
-  { name:"紅玉璽", eng:"Red Jade Seal", msg:"你是高壓環境中的核心幕僚，擅長開疆拓土。你能協助他人建構事業版圖，是運籌帷幄的隱形領導者。", oils:["大師 Master","黑天鵝 Black Swan","冬藏 Winter Harvesting","勝利 Victory","神走運 Super Lucky"] },
-  { name:"紫鈴蘭", eng:"Purple Lily of the Valley", msg:"你是活出真善美的人間天使，具藝術表達天賦。即使身處殘忍處境，你仍能保持一顆溫柔而純粹的心。", oils:["天使之心 Angel's Heart","自愛 Self Love","聖殿 Sacred Altar","神聖保護 Divine Protection","謬思 Muse","尊貴紫火 Noble Violet Flame"] },
-  { name:"融合之擁", eng:"Embrace of Union", msg:"你體貼善良，追求陰陽合一的合一感。你的豐盛來自學會愛自己、劃清被剝削的界線，活出完整的自我。", oils:["私奔 Elopement","做自己 Be Yourself","自愛 Self Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","愛的新開始 New Start for Love","圓滿 Wholeness"] },
-  { name:"乘風破浪", eng:"Riding the Waves", msg:"你是勇氣與信心的挑戰者，能開創偉大格局。你將在環保、科技等領域做出大師級貢獻，引領時代前行。", oils:["大師 Master","戰士甦醒 Warrior Awakens","做自己 Be Yourself","夢行者 Dreamers","神走運 Super Lucky","承諾 Commitment"] },
-  { name:"水龍守護者", eng:"Water Dragon Guardian", msg:"你是魅力十足的低調守護者，具備奇幻世界的秘密智慧。你以具體行動表現對他人深深的在乎與守護。", oils:["神走運 Super Lucky","天使之心 Angel's Heart","夢行者 Dreamers","謬思 Muse","尊貴紫火 Noble Violet Flame","圓滿 Wholeness"] },
-  { name:"愛之海", eng:"Sea of Love", msg:"你是陰性能量的聖壇，能平衡過度陽性的競爭世界。你的存在本身即是神聖療癒，帶動周遭的放鬆與滋養。", oils:["黑天鵝 Black Swan","做自己 Be Yourself","私奔 Elopement","魅力 Charisma","豐盛之流 Prosperity Flow","圓滿 Wholeness"] },
-  { name:"綠洲之心", eng:"Heart of Oasis", msg:"你具商業談判與市場嗅覺，堅持公平正義。你的使命是協助世界找回愛的平衡，建立真正公平的對價關係。", oils:["圓滿 Wholeness","豐盛之流 Prosperity Flow","勝利 Victory","財富磁石 Business Boosting","冬藏 Winter Harvesting","魅力 Charisma"] },
-  { name:"千絲萬縷", eng:"Thousand Threads", msg:"你是具耐心與毅力的領袖，也是細節控。你能協助他人轉化生命困境，需學習平衡工作與家庭的愛。", oils:["私奔 Elopement","黑天鵝 Black Swan","信任 Trust","自愛 Self Love","大師 Master"] },
-  { name:"水晶洞", eng:"Crystal Cave", msg:"你如一面鏡子，照出他人的真實面貌。你具他心通能力，中年後將覺醒成為引導他人心靈成長的神聖管道。", oils:["聖殿 Sacred Altar","魅力 Charisma","財富磁石 Business Boosting","謬思 Muse","豐盛之流 Prosperity Flow","做自己 Be Yourself","圓滿 Wholeness"] },
-  { name:"生命樂章", eng:"Life Symphony", msg:"你具音樂、邏輯與程式編碼天賦，為世人帶來宇宙的和諧樂章。晚年將深化宗教信仰，成為靈性的引領者。", oils:["天賦 Talents","謬思 Muse","承諾 Commitment","信任 Trust","圓滿 Wholeness","愛的新開始 New Start for Love","冬藏 Winter Harvesting"] },
-  { name:"玫瑰鬥士", eng:"Rose Warrior", msg:"你容貌冷豔，帶有復仇意志的生命模式。透過寬恕釋放業力，你示範如何勇敢接納並整合自己的內在陰影。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","夢行者 Dreamers","戰士甦醒 Warrior Awakens","圓滿 Wholeness"] },
-  { name:"神聖羽毛", eng:"Sacred Feather", msg:"你是能量療癒者與驅魔師，天生具備靈界感知力。你能幫助人們掃除心魔、淨化靈魂，守護神聖的光與愛。", oils:["神聖保護 Divine Protection","尊貴紫火 Noble Violet Flame","大師 Master","天賦 Talents","天使之心 Angel's Heart","戰士甦醒 Warrior Awakens"] },
-  { name:"穀倉", eng:"The Granary", msg:"你具憂患意識，與大地蓋亞深深相連。你的使命是幫助人類建立永續平衡的系統，帶領眾人回歸極簡生活。", oils:["冬藏 Winter Harvesting","天賦 Talents","豐盛之流 Prosperity Flow","信任 Trust","承諾 Commitment","做自己 Be Yourself"] },
-  { name:"風之子", eng:"Child of Wind", msg:"你是資訊傳遞者，擅長蒐集情報與感知趨勢。你勇於對抗權勢發布真相，是訊息的媒合者與時代的先行者。", oils:["信任 Trust","天賦 Talents","神走運 Super Lucky","謬思 Muse","承諾 Commitment","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
-  { name:"異后", eng:"The Exotic Queen", msg:"你擁有模仿與快速複製他人天賦的能力，多才多藝。你需透過協助弱勢群體找到內心真正的意義與滿足。", oils:["承諾 Commitment","大師 Master","信任 Trust","天使之心 Angel's Heart","圓滿 Wholeness"] },
-  { name:"灶火", eng:"Hearth Fire", msg:"你的內在無比溫暖，能透過雙手為人帶來幸福感。無論是廚藝、家政或任何服務，你純粹的愛是最大的力量。", oils:["做自己 Be Yourself","愛的新開始 New Start for Love","天使之心 Angel's Heart","豐盛之流 Prosperity Flow","神走運 Super Lucky","財富磁石 Business Boosting"] },
-  { name:"復育者", eng:"The Restorer", msg:"你能復甦衰落的產業，是夢想的推手。透過反求諸己，你將人生中每一個挫折都轉化為最豐美的成功養分。", oils:["戰士甦醒 Warrior Awakens","夢行者 Dreamers","承諾 Commitment","做自己 Be Yourself","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","神走運 Super Lucky","冬藏 Winter Harvesting"] },
-  { name:"黑夜明珠", eng:"Pearl of the Night", msg:"你具神秘學解讀天賦，能帶來高等星際知識。你需十年磨一劍，聚焦深入研究以顯化屬於你的豐盛與光明。", oils:["承諾 Commitment","冬藏 Winter Harvesting","天賦 Talents","謬思 Muse","大師 Master","圓滿 Wholeness","聖殿 Sacred Altar"] }
+  { name:"真實的英雄", eng:"The True Hero", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-1-40.jpg", msg:"你天生具備俠義心腸與領導力，勇於為他人挺身而出。豐盛密碼：勇敢說出自己的需求，先滿足自己再幫助他人。", oils:["做自己 Be Yourself","自愛 Self Love","私奔 Elopement","冬藏 Winter Harvesting"] },
+  { name:"太陽：光明的源頭", eng:"The Sun", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-2-33.jpg", msg:"你擁有明星特質與完美主義，渴望透過活出自我來啟發他人。豐盛來自坦誠分享生命經驗，照亮周遭的人。", oils:["信任 Trust","黑天鵝 Black Swan","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
+  { name:"勝利者", eng:"The Victor", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-3-34.jpg", msg:"你熱愛競爭，越挫越勇，具強大爆發力與策略思維。你天生是贏家，豐盛來自以競爭推動進步。", oils:["勝利 Victory","做自己 Be Yourself","大師 Master","天賦 Talents","豐盛之流 Prosperity Flow","自愛 Self Love"] },
+  { name:"天使之翼", eng:"Angel Wings", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-9-4.jpg", msg:"你具高度慈悲心與藝術氣質，在情感上敏感脆弱。學習不以理想化的愛情定義自己，你本身即是完整的。", oils:["天使之心 Angel's Heart","自愛 Self Love","愛的新開始 New Start for Love","信任 Trust","黑天鵝 Black Swan"] },
+  { name:"白蓮", eng:"White Lotus", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-5-32.jpg", msg:"你如現代修士般喜愛簡樸自然，追求內在和平。你的天賦是帶領他人找到生命中真正的平衡與靜心。", oils:["戰士甦醒 Warrior Awakens","天賦 Talents","豐盛之流 Prosperity Flow","謬思 Muse","承諾 Commitment","大師 Master"] },
+  { name:"金礦河", eng:"Gold River", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-24-6.jpg", msg:"你具冒險精神，擅長從平凡中發現致富機會。你的豐盛來自勇於探索，並學習管理生活細節與財務。", oils:["承諾 Commitment","謬思 Muse","做自己 Be Yourself","神走運 Super Lucky","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
+  { name:"金色飛船", eng:"Golden Spaceship", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-15-7.jpg", msg:"你具備強大聚合力，能號召志同道合者共圓夢想。你的使命是為特定族群發聲，傳遞宏大願景。", oils:["夢行者 Dreamers","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","做自己 Be Yourself","黑天鵝 Black Swan","魅力 Charisma"] },
+  { name:"土象金元寶", eng:"Earth Gold", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-20-8.jpg", msg:"你是務實的理財高手，天賦是放大他人財富。用財富造福所愛之人，創造真正的幸福與安全感。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","魅力 Charisma","私奔 Elopement"] },
+  { name:"淨化者", eng:"The Purifier", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-9-4.jpg", msg:"你天生是療癒者，能平息衝突、轉化能量場。豐盛來自忠於內心，傳達超越二元對立的愛與光。", oils:["天使之心 Angel's Heart","做自己 Be Yourself","大師 Master","神聖保護 Divine Protection","尊貴紫火 Noble Violet Flame","天賦 Talents"] },
+  { name:"紅色大地", eng:"Red Earth", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-29-10.jpg", msg:"你具野心與抱負，擅長以懷柔政策達成長期目標。你擁有強大管理能力，需學習放下控制欲。", oils:["魅力 Charisma","私奔 Elopement","黑天鵝 Black Swan","勝利 Victory"] },
+  { name:"金色雲海", eng:"Golden Clouds", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-30-11.jpg", msg:"你是受良好保護的幸運兒，特質純真浪漫。你對金錢有潛在恐懼，需學習獨立自主，相信自己的豐盛。", oils:["承諾 Commitment","冬藏 Winter Harvesting","自愛 Self Love","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","謬思 Muse"] },
+  { name:"藍色人魚", eng:"Blue Mermaid", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-35-12.jpg", msg:"你具獨特通靈能力，是連結不同維度的管道。你的豐盛來自勇敢穿越情感考驗，信任自己的獨特天賦。", oils:["謬思 Muse","天賦 Talents","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","信任 Trust","做自己 Be Yourself"] },
+  { name:"莫內花園", eng:"Monet's Garden", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-13-37.jpg", msg:"你是極度幸運的顯化者，能將才華轉化為名利。你的使命是透過分享熱情與喜樂感染並啟發周遭的人。", oils:["豐盛之流 Prosperity Flow","財富磁石 Business Boosting","冬藏 Winter Harvesting","謬思 Muse","信任 Trust","魅力 Charisma"] },
+  { name:"聖愛女神", eng:"Goddess of Sacred Love", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-39-14.jpg", msg:"你的人生充滿波折，但能透過內在力量轉化逆境。你擅長寬恕，是走過苦難後閃耀的心靈導師。", oils:["黑天鵝 Black Swan","大師 Master","天賦 Talents","愛的新開始 New Start for Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","豐盛之流 Prosperity Flow","財富磁石 Business Boosting"] },
+  { name:"老鷹之翼", eng:"Eagle Wings", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-15-7.jpg", msg:"你是富有智慧的老靈魂，具宏觀視野與自律。你需平衡對伴侶的陪伴與獨處需求，在高處飛翔又紮根大地。", oils:["信任 Trust","私奔 Elopement","承諾 Commitment","魅力 Charisma","夢行者 Dreamers"] },
+  { name:"夢行者", eng:"Dream Walker", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-23-16.jpg", msg:"你能預知夢並進行潛意識工作，是真正的顯化大師。你的天賦是教導世人如何透過夢境的力量改變命運。", oils:["信任 Trust","私奔 Elopement","承諾 Commitment","魅力 Charisma","夢行者 Dreamers"] },
+  { name:"富麗堂皇", eng:"Magnificent", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-38-17.jpg", msg:"你具領袖氣質與極佳品味，能輕易顯化豐盛物質生活。你需要堅定承諾，才能將宏大願景落實為現實。", oils:["承諾 Commitment","做自己 Be Yourself","尊貴紫火 Noble Violet Flame","魅力 Charisma","豐盛之流 Prosperity Flow"] },
+  { name:"金色甘露", eng:"Golden Nectar", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-26-18.jpg", msg:"你看似隨性，但一切皆在神聖計畫之中。你是集體揚升的催化劑，你的存在能引發他人的覺醒與蛻變。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","戰士甦醒 Warrior Awakens","夢行者 Dreamers"] },
+  { name:"紫色仙境", eng:"Purple Wonderland", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-25-19.jpg", msg:"你溫柔而強大，具有與植物和精靈溝通的天賦。你擅長食療與守護親友，需克服對失去與分離的恐懼。", oils:["尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","天賦 Talents","謬思 Muse","戰士甦醒 Warrior Awakens"] },
+  { name:"藍風暴", eng:"Blue Storm", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-20-8.jpg", msg:"你能在災難中獲得意識的揚升。你具高冷氣質與極致專注力，能帶領他人突破看似無法跨越的重重危機。", oils:["豐盛之流 Prosperity Flow","戰士甦醒 Warrior Awakens","天使之心 Angel's Heart","自愛 Self Love","承諾 Commitment"] },
+  { name:"橘色宇宙", eng:"Orange Universe", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-21-43.jpg", msg:"你是特立獨行的行為藝術家，具有神秘學天份。你重視個人界線，豐盛的流動來自深深的愛與充足的耐心。", oils:["私奔 Elopement","魅力 Charisma","謬思 Muse","信任 Trust","大師 Master","做自己 Be Yourself"] },
+  { name:"冰晶匯流", eng:"Ice Crystal Confluence", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-36-22.jpg", msg:"你是資源整合者與外交官，能跨文化交流並預見他人命運。你擅長調和紛爭，統整眾多力量成就大事。", oils:["愛的新開始 New Start for Love","天賦 Talents","承諾 Commitment","豐盛之流 Prosperity Flow"] },
+  { name:"神聖河流", eng:"Sacred River", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-23-16.jpg", msg:"你的內在具強大韌性與源源不絕的生命力。你能以不批判的愛轉化他人，被視為神聖的大地母親。", oils:["自愛 Self Love","天使之心 Angel's Heart","豐盛之流 Prosperity Flow","神走運 Super Lucky","魅力 Charisma"] },
+  { name:"紅頂藝人", eng:"Red Top Artist", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-24-6.jpg", msg:"你是舞台上的明星，是超級完美主義者。你願意投入巨大精力磨練才華，你的天賦是透過表演啟發眾人。", oils:["做自己 Be Yourself","魅力 Charisma","天賦 Talents","豐盛之流 Prosperity Flow","謬思 Muse","夢行者 Dreamers"] },
+  { name:"雲中霧", eng:"Cloud & Mist", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-25-19.jpg", msg:"你是富想像力的夢想家，能連結眾人的夢想藍圖。你適合開發大眾的創造力，統籌規劃並實現大型計畫。", oils:["承諾 Commitment","謬思 Muse","神聖保護 Divine Protection","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","夢行者 Dreamers"] },
+  { name:"生命源頭", eng:"Source of Life", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-26-18.jpg", msg:"你的身體能隨環境進化，對健康議題高度敏感。你此生的使命是展示心靈意識如何深刻影響物理基因。", oils:["天賦 Talents","天使之心 Angel's Heart","自愛 Self Love","愛的新開始 New Start for Love","信任 Trust"] },
+  { name:"紅玉璽", eng:"Red Jade Seal", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-42-27.jpg", msg:"你是高壓環境中的核心幕僚，擅長開疆拓土。你能協助他人建構事業版圖，是運籌帷幄的隱形領導者。", oils:["大師 Master","黑天鵝 Black Swan","冬藏 Winter Harvesting","勝利 Victory","神走運 Super Lucky"] },
+  { name:"紫鈴蘭", eng:"Purple Lily of the Valley", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-28-31.jpg", msg:"你是活出真善美的人間天使，具藝術表達天賦。即使身處殘忍處境，你仍能保持一顆溫柔而純粹的心。", oils:["天使之心 Angel's Heart","自愛 Self Love","聖殿 Sacred Altar","神聖保護 Divine Protection","謬思 Muse","尊貴紫火 Noble Violet Flame"] },
+  { name:"融合之擁", eng:"Embrace of Union", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-29-10.jpg", msg:"你體貼善良，追求陰陽合一的合一感。你的豐盛來自學會愛自己、劃清被剝削的界線，活出完整的自我。", oils:["私奔 Elopement","做自己 Be Yourself","自愛 Self Love","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection","愛的新開始 New Start for Love","圓滿 Wholeness"] },
+  { name:"乘風破浪", eng:"Riding the Waves", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-30-11.jpg", msg:"你是勇氣與信心的挑戰者，能開創偉大格局。你將在環保、科技等領域做出大師級貢獻，引領時代前行。", oils:["大師 Master","戰士甦醒 Warrior Awakens","做自己 Be Yourself","夢行者 Dreamers","神走運 Super Lucky","承諾 Commitment"] },
+  { name:"水龍守護者", eng:"Water Dragon Guardian", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-28-31.jpg", msg:"你是魅力十足的低調守護者，具備奇幻世界的秘密智慧。你以具體行動表現對他人深深的在乎與守護。", oils:["神走運 Super Lucky","天使之心 Angel's Heart","夢行者 Dreamers","謬思 Muse","尊貴紫火 Noble Violet Flame","圓滿 Wholeness"] },
+  { name:"愛之海", eng:"Sea of Love", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-5-32.jpg", msg:"你是陰性能量的聖壇，能平衡過度陽性的競爭世界。你的存在本身即是神聖療癒，帶動周遭的放鬆與滋養。", oils:["黑天鵝 Black Swan","做自己 Be Yourself","私奔 Elopement","魅力 Charisma","豐盛之流 Prosperity Flow","圓滿 Wholeness"] },
+  { name:"綠洲之心", eng:"Heart of Oasis", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-2-33.jpg", msg:"你具商業談判與市場嗅覺，堅持公平正義。你的使命是協助世界找回愛的平衡，建立真正公平的對價關係。", oils:["圓滿 Wholeness","豐盛之流 Prosperity Flow","勝利 Victory","財富磁石 Business Boosting","冬藏 Winter Harvesting","魅力 Charisma"] },
+  { name:"千絲萬縷", eng:"Thousand Threads", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-3-34.jpg", msg:"你是具耐心與毅力的領袖，也是細節控。你能協助他人轉化生命困境，需學習平衡工作與家庭的愛。", oils:["私奔 Elopement","黑天鵝 Black Swan","信任 Trust","自愛 Self Love","大師 Master"] },
+  { name:"水晶洞", eng:"Crystal Cave", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-35-12.jpg", msg:"你如一面鏡子，照出他人的真實面貌。你具他心通能力，中年後將覺醒成為引導他人心靈成長的神聖管道。", oils:["聖殿 Sacred Altar","魅力 Charisma","財富磁石 Business Boosting","謬思 Muse","豐盛之流 Prosperity Flow","做自己 Be Yourself","圓滿 Wholeness"] },
+  { name:"生命樂章", eng:"Life Symphony", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-36-22.jpg", msg:"你具音樂、邏輯與程式編碼天賦，為世人帶來宇宙的和諧樂章。晚年將深化宗教信仰，成為靈性的引領者。", oils:["天賦 Talents","謬思 Muse","承諾 Commitment","信任 Trust","圓滿 Wholeness","愛的新開始 New Start for Love","冬藏 Winter Harvesting"] },
+  { name:"玫瑰鬥士", eng:"Rose Warrior", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-13-37.jpg", msg:"你容貌冷豔，帶有復仇意志的生命模式。透過寬恕釋放業力，你示範如何勇敢接納並整合自己的內在陰影。", oils:["愛的新開始 New Start for Love","自愛 Self Love","天使之心 Angel's Heart","夢行者 Dreamers","戰士甦醒 Warrior Awakens","圓滿 Wholeness"] },
+  { name:"神聖羽毛", eng:"Sacred Feather", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-38-17.jpg", msg:"你是能量療癒者與驅魔師，天生具備靈界感知力。你能幫助人們掃除心魔、淨化靈魂，守護神聖的光與愛。", oils:["神聖保護 Divine Protection","尊貴紫火 Noble Violet Flame","大師 Master","天賦 Talents","天使之心 Angel's Heart","戰士甦醒 Warrior Awakens"] },
+  { name:"穀倉", eng:"The Granary", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-39-14.jpg", msg:"你具憂患意識，與大地蓋亞深深相連。你的使命是幫助人類建立永續平衡的系統，帶領眾人回歸極簡生活。", oils:["冬藏 Winter Harvesting","天賦 Talents","豐盛之流 Prosperity Flow","信任 Trust","承諾 Commitment","做自己 Be Yourself"] },
+  { name:"風之子", eng:"Child of Wind", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-1-40.jpg", msg:"你是資訊傳遞者，擅長蒐集情報與感知趨勢。你勇於對抗權勢發布真相，是訊息的媒合者與時代的先行者。", oils:["信任 Trust","天賦 Talents","神走運 Super Lucky","謬思 Muse","承諾 Commitment","尊貴紫火 Noble Violet Flame","神聖保護 Divine Protection"] },
+  { name:"異后", eng:"The Exotic Queen", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-44-41.jpg", msg:"你擁有模仿與快速複製他人天賦的能力，多才多藝。你需透過協助弱勢群體找到內心真正的意義與滿足。", oils:["承諾 Commitment","大師 Master","信任 Trust","天使之心 Angel's Heart","圓滿 Wholeness"] },
+  { name:"灶火", eng:"Hearth Fire", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-42-27.jpg", msg:"你的內在無比溫暖，能透過雙手為人帶來幸福感。無論是廚藝、家政或任何服務，你純粹的愛是最大的力量。", oils:["做自己 Be Yourself","愛的新開始 New Start for Love","天使之心 Angel's Heart","豐盛之流 Prosperity Flow","神走運 Super Lucky","財富磁石 Business Boosting"] },
+  { name:"復育者", eng:"The Restorer", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-21-43.jpg", msg:"你能復甦衰落的產業，是夢想的推手。透過反求諸己，你將人生中每一個挫折都轉化為最豐美的成功養分。", oils:["戰士甦醒 Warrior Awakens","夢行者 Dreamers","承諾 Commitment","做自己 Be Yourself","豐盛之流 Prosperity Flow","財富磁石 Business Boosting","神走運 Super Lucky","冬藏 Winter Harvesting"] },
+  { name:"黑夜明珠", eng:"Pearl of the Night", img:"https://emmanuellechen-lang.github.io/emeraldsolis789/cards-44-41.jpg", msg:"你具神秘學解讀天賦，能帶來高等星際知識。你需十年磨一劍，聚焦深入研究以顯化屬於你的豐盛與光明。", oils:["承諾 Commitment","冬藏 Winter Harvesting","天賦 Talents","謬思 Muse","大師 Master","圓滿 Wholeness","聖殿 Sacred Altar"] }
 ];
 
 function drawCard() {
@@ -164,17 +165,52 @@ function drawCard() {
   const oilTags = card.oils.map(o => `<span style="display:inline-block;background:rgba(212,175,55,0.2);border:1px solid #d4af37;border-radius:20px;padding:0.3rem 0.75rem;margin:0.25rem;font-size:0.85rem;color:#ffd700;">${o}</span>`).join('');
   const html = `
     <div style="background:rgba(60,10,100,0.7);border:1px solid #d4af37;border-radius:10px;padding:1.2rem;text-align:left;animation:fadeIn 0.5s ease;">
+
+      <!-- 牌卡圖片與名稱 -->
       <div style="text-align:center;margin-bottom:0.8rem;">
-        <span style="font-size:2rem;">🃏</span>
-        <div style="color:#ffd700;font-size:1.2rem;font-weight:700;margin-top:0.3rem;">No.${idx+1}・${card.name}</div>
-        <div style="color:#c5a028;font-size:0.85rem;letter-spacing:1px;">${card.eng}</div>
+        <img src="${card.img}" alt="${card.name}" style="width:100%;max-width:240px;border-radius:10px;border:2px solid rgba(212,175,55,0.6);margin-bottom:0.8rem;display:block;margin-left:auto;margin-right:auto;" onerror="this.style.display='none'"/>
+        <div style="color:#ffd700;font-size:1.2rem;font-weight:700;">✦ No.${idx+1}・${card.name} ✦</div>
+        <div style="color:#c5a028;font-size:0.82rem;letter-spacing:1px;margin-top:0.2rem;">${card.eng}</div>
       </div>
-      <p style="color:#f5e6c8;font-size:0.88rem;line-height:1.8;border-top:1px dashed rgba(212,175,55,0.4);padding-top:0.8rem;">${card.msg}</p>
-      <div style="margin-top:0.9rem;">
-        <div style="color:#ffd700;font-size:0.88rem;font-weight:700;margin-bottom:0.4rem;">✨ 高我為你推薦的精油：</div>
-        <div style="text-align:center;">${oilTags}</div>
+
+      <!-- 牌義摘要 -->
+      <div style="border-top:1px dashed rgba(212,175,55,0.4);padding-top:0.9rem;margin-top:0.3rem;">
+        <div style="color:#ffd700;font-size:0.82rem;font-weight:700;letter-spacing:1px;margin-bottom:0.4rem;">🔮 高我給你的訊息：</div>
+        <p style="color:#f5e6c8;font-size:0.88rem;line-height:1.85;margin:0;">${card.msg}</p>
       </div>
-      <button onclick="drawCard()" style="display:block;width:100%;margin-top:1.2rem;background:rgba(212,175,55,0.25);border:1px solid #d4af37;color:#ffd700;font-weight:700;padding:0.65rem;border-radius:6px;cursor:pointer;font-size:0.92rem;">🔄 再抽一次</button>
+
+      <!-- 勾人的提示 -->
+      <div style="background:rgba(212,175,55,0.1);border:1px dashed rgba(212,175,55,0.5);border-radius:8px;padding:0.7rem 0.9rem;margin:0.9rem 0;text-align:center;">
+        <p style="color:#ffd700;font-size:0.85rem;margin:0;line-height:1.7;">✨ 這只是你天賦的冰山一角⋯⋯<br/>
+        <span style="font-size:0.82rem;color:#f5e6c8;">你的靈魂藍圖中，還藏著更深的豐盛密碼、使命線索與前世業力。<br/>想知道屬於你的完整天賦解讀嗎？</span></p>
+      </div>
+
+      <!-- 推薦精油 -->
+      <div style="margin-top:0.8rem;">
+        <div style="color:#ffd700;font-size:0.85rem;font-weight:700;margin-bottom:0.5rem;">🌿 高我為你推薦的魔法精油：</div>
+        <div style="text-align:center;margin-bottom:0.5rem;">${oilTags}</div>
+        <p style="color:#c5a028;font-size:0.78rem;text-align:center;margin:0.3rem 0 0;">👆 點擊下方按鈕私訊詢問精油</p>
+      </div>
+
+      <!-- CTA 按鈕區 -->
+      <div style="margin-top:1.1rem;display:flex;flex-direction:column;gap:0.55rem;">
+        <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank"
+           style="display:block;text-align:center;background:linear-gradient(135deg,#7b2d8b,#4a0080);border:1px solid #d4af37;color:#ffd700;font-weight:700;padding:0.7rem;border-radius:8px;text-decoration:none;font-size:0.92rem;letter-spacing:1px;">
+          🔮 私訊老巫・解讀我的完整天賦
+        </a>
+        <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank"
+           style="display:block;text-align:center;background:linear-gradient(135deg,#1a6b3a,#0d4a2a);border:1px solid #d4af37;color:#f5e6c8;font-weight:700;padding:0.7rem;border-radius:8px;text-decoration:none;font-size:0.88rem;">
+          🌿 私訊詢問推薦精油・立即訂購
+        </a>
+        <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank"
+           style="display:block;text-align:center;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.5);color:#d4af37;font-weight:700;padding:0.65rem;border-radius:8px;text-decoration:none;font-size:0.85rem;">
+          🃏 購買「高我連結天賦解讀神諭卡」
+        </a>
+        <button onclick="drawCard()"
+           style="display:block;width:100%;background:transparent;border:1px dashed rgba(212,175,55,0.4);color:#c5a028;font-weight:700;padding:0.55rem;border-radius:6px;cursor:pointer;font-size:0.85rem;">
+          🔄 再抽一次
+        </button>
+      </div>
     </div>`;
   const result = document.getElementById('card-result');
   result.innerHTML = html;
