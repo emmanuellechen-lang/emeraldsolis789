@@ -57,8 +57,12 @@
         --gold-light: #ffd700;
         --gold-muted: #c5a028;
         --text-main: #f5e6c8;
-        --bg-dark: #000510;
-        --bg-purple: #0d0020;
+        --bg-dark: #020818;
+        --bg-purple: #100530;
+        --cosmic-pink: #ff2d78;
+        --cosmic-cyan: #00e5ff;
+        --cosmic-violet: #7c3aed;
+        --cosmic-teal: #0f9b8e;
       }
       *,
       *::before,
@@ -68,7 +72,12 @@
       body {
         margin: 0;
         padding: 0;
-        background: radial-gradient(ellipse at center, var(--bg-purple) 0%, var(--bg-dark) 50%, #050010 100%);
+        background:
+          radial-gradient(ellipse at 15% 20%, rgba(120,0,160,0.5) 0%, transparent 50%),
+          radial-gradient(ellipse at 85% 15%, rgba(0,80,200,0.45) 0%, transparent 45%),
+          radial-gradient(ellipse at 75% 80%, rgba(200,0,120,0.35) 0%, transparent 45%),
+          radial-gradient(ellipse at 20% 85%, rgba(0,160,180,0.35) 0%, transparent 45%),
+          radial-gradient(ellipse at 50% 50%, rgba(60,10,100,0.7) 0%, #020818 70%);
         color: var(--text-main);
         font-family: 'Noto Serif TC', serif;
         min-height: 100vh;
@@ -86,16 +95,20 @@
         z-index: -1;
         pointer-events: none;
         background-image:
-          radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
-          radial-gradient(2px 2px at 40px 70px, #fffefa, rgba(0, 0, 0, 0)),
-          radial-gradient(2px 2px at 50px 160px, #fffaeb, rgba(0, 0, 0, 0)),
-          radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
-          radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
-          radial-gradient(2px 2px at 160px 120px, #fffaeb, rgba(0, 0, 0, 0));
+          radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 40px 70px, #ff9de2, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 50px 160px, #00e5ff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 130px 80px, #b388ff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 160px 120px, #ffd700, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 75px 55px, #80ffea, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 110px 145px, #ff80ab, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 180px 30px, #ffffff, rgba(0,0,0,0)),
+          radial-gradient(1px 1px at 25px 100px, #82b1ff, rgba(0,0,0,0));
         background-repeat: repeat;
         background-size: 200px 200px;
         animation: twinkle 5s infinite alternate;
-        opacity: 0.6;
+        opacity: 0.8;
       }
       @keyframes twinkle {
         0% {
@@ -116,11 +129,14 @@
         z-index: -1;
         pointer-events: none;
         background-image:
-          radial-gradient(3px 3px at 100px 150px, var(--gold), rgba(0, 0, 0, 0)),
-          radial-gradient(4px 4px at 200px 50px, var(--gold-light), rgba(0, 0, 0, 0));
+          radial-gradient(3px 3px at 100px 150px, #ffd700, rgba(0,0,0,0)),
+          radial-gradient(4px 4px at 200px 50px, #ff2d78, rgba(0,0,0,0)),
+          radial-gradient(3px 3px at 250px 180px, #00e5ff, rgba(0,0,0,0)),
+          radial-gradient(2px 2px at 60px 220px, #b388ff, rgba(0,0,0,0)),
+          radial-gradient(3px 3px at 180px 90px, #80ffea, rgba(0,0,0,0));
         background-size: 300px 300px;
         animation: float 15s linear infinite;
-        opacity: 0.3;
+        opacity: 0.5;
       }
       @keyframes float {
         0% {
@@ -155,12 +171,19 @@
       .hero-title {
         font-size: 2.2rem;
         font-weight: 700;
-        color: var(--gold-light);
-        text-shadow:
-          0 0 15px rgba(255, 215, 0, 0.5),
-          0 0 30px rgba(212, 175, 55, 0.3);
+        background: linear-gradient(90deg, #ffd700 0%, #ff80ab 25%, #b388ff 50%, #00e5ff 75%, #ffd700 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% auto;
+        animation: shimmerTitle 4s linear infinite;
+        filter: drop-shadow(0 0 12px rgba(179,136,255,0.6));
         margin-bottom: 0.5rem;
         letter-spacing: 4px;
+      }
+      @keyframes shimmerTitle {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
       }
       .hero-subtitle {
         font-size: 0.95rem;
@@ -184,9 +207,9 @@
         margin-bottom: 30px;
       }
       .portal-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(179,136,255,0.35);
         border-radius: 12px;
         padding: 15px 10px;
         text-align: center;
@@ -197,7 +220,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        animation: pulseGlow 3s infinite alternate;
+        animation: pulseGlow 6s infinite;
       }
       .portal-card:hover {
         background: rgba(212, 175, 55, 0.1);
@@ -240,36 +263,50 @@
 
       /* Glow Colors for Portals */
       .glow-oracle {
-        box-shadow: inset 0 0 15px rgba(123, 45, 139, 0.2);
+        background: rgba(120,20,160,0.18);
+        border-color: rgba(179,100,255,0.65);
+        box-shadow: inset 0 0 20px rgba(150,50,220,0.3), 0 0 15px rgba(150,50,220,0.2);
       }
+      .glow-oracle:hover { background: rgba(120,20,160,0.35); border-color: #b388ff; }
       .glow-runes {
-        box-shadow: inset 0 0 15px rgba(26, 58, 107, 0.3);
+        background: rgba(0,60,160,0.18);
+        border-color: rgba(80,140,255,0.65);
+        box-shadow: inset 0 0 20px rgba(0,100,220,0.3), 0 0 15px rgba(0,100,220,0.2);
       }
+      .glow-runes:hover { background: rgba(0,60,160,0.35); border-color: #82b1ff; }
       .glow-oils {
-        box-shadow: inset 0 0 15px rgba(26, 74, 26, 0.3);
+        background: rgba(0,100,80,0.18);
+        border-color: rgba(0,200,160,0.65);
+        box-shadow: inset 0 0 20px rgba(0,180,140,0.3), 0 0 15px rgba(0,180,140,0.2);
       }
+      .glow-oils:hover { background: rgba(0,100,80,0.35); border-color: #80ffea; }
       .glow-book {
-        box-shadow: inset 0 0 15px rgba(90, 48, 0, 0.3);
+        background: rgba(140,80,0,0.18);
+        border-color: rgba(255,180,0,0.65);
+        box-shadow: inset 0 0 20px rgba(220,140,0,0.3), 0 0 15px rgba(220,140,0,0.2);
       }
+      .glow-book:hover { background: rgba(140,80,0,0.35); border-color: #ffd740; }
       .glow-eden {
-        box-shadow: inset 0 0 15px rgba(107, 26, 58, 0.2);
+        background: rgba(160,20,80,0.18);
+        border-color: rgba(255,100,160,0.65);
+        box-shadow: inset 0 0 20px rgba(220,50,120,0.3), 0 0 15px rgba(220,50,120,0.2);
       }
+      .glow-eden:hover { background: rgba(160,20,80,0.35); border-color: #ff80ab; }
 
       @keyframes pulseGlow {
-        0% {
-          box-shadow: 0 0 5px rgba(212, 175, 55, 0.1);
-        }
-        100% {
-          box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
+        0%   { box-shadow: 0 0 8px rgba(179,136,255,0.3), inset 0 0 8px rgba(179,136,255,0.1); }
+        33%  { box-shadow: 0 0 12px rgba(0,229,255,0.3), inset 0 0 10px rgba(0,229,255,0.1); }
+        66%  { box-shadow: 0 0 10px rgba(255,45,120,0.25), inset 0 0 8px rgba(255,45,120,0.1); }
+        100% { box-shadow: 0 0 14px rgba(179,136,255,0.35), inset 0 0 12px rgba(179,136,255,0.15); }
       }
 
       /* Sticky Navigation */
       .sticky-nav {
         position: sticky;
         top: 0;
-        background: rgba(0, 5, 16, 0.95);
-        backdrop-filter: blur(10px);
+        background: rgba(10, 5, 30, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(179,136,255,0.25) !important;
         z-index: 100;
         display: flex;
         overflow-x: auto;
