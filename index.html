@@ -608,7 +608,7 @@
 
         <div class="portal-grid">
           <a href="#oracle" class="portal-card glow-oracle">
-            <img src="https://emmanuellechen-lang.github.io/emeraldsolis789/card.front.png" alt="神諭卡" class="portal-img" />
+            <img src="https://emmanuellechen-lang.github.io/emeraldsolis789/card.front.png" alt="神諭卡" class="portal-img" data-height-listener-added="true">
             <div class="portal-name">神諭卡殿堂</div>
             <div class="portal-desc">高我連結・天賦解讀</div>
           </a>
@@ -623,7 +623,7 @@
             <div class="portal-desc">Wiccan 愛的魔法</div>
           </a>
           <a href="#book" class="portal-card glow-book">
-            <img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/104/08/0011040877.jpg&v=67856cbb&w=200&h=200" alt="高我喚醒我的38件事" class="portal-img-book" />
+            <img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/104/08/0011040877.jpg&amp;v=67856cbb&amp;w=200&amp;h=200" alt="高我喚醒我的38件事" class="portal-img-book" data-height-listener-added="true">
             <div class="portal-name">38件事智慧宮</div>
             <div class="portal-desc">高我喚醒之書</div>
           </a>
@@ -675,6 +675,45 @@
           <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" class="btn-line">✦ LINE 私訊詢問牌卡 ✦</a>
         </div>
 
+        <div
+          id="draw-section"
+          style="
+            border: 2px solid var(--gold);
+            border-radius: 14px;
+            padding: 1.4rem 1.2rem 1.6rem;
+            background: rgba(50, 10, 90, 0.3);
+            text-align: center;
+          "
+        >
+          <div class="box-title" style="font-size: 1.15rem; letter-spacing: 3px; margin-bottom: 0.4rem">
+            🔮 高我神諭卡・抽牌選精油
+          </div>
+          <p style="color: var(--text-main); font-size: 0.88rem; margin-bottom: 0.5rem">你的靈魂，正在等待被看見。</p>
+          <p style="color: var(--gold-muted); font-size: 0.82rem; margin-bottom: 1rem">
+            靜心片刻，在心中默問：<br />「<em>此刻，我最需要什麼能量的支持？</em>」<br />然後，讓你的高我為你選兩張牌⋯⋯
+          </p>
+          <button
+            id="draw-btn"
+            onclick="drawCard()"
+            style="
+              background: linear-gradient(135deg, #7b2d8b, #d4af37);
+              color: #fff;
+              font-weight: 700;
+              font-size: 1.05rem;
+              padding: 0.85rem 2rem;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              letter-spacing: 2px;
+              width: 100%;
+              max-width: 320px;
+              font-family: 'Noto Serif TC', serif;
+            "
+          >
+            ✨ 抽兩張牌 ✨
+          </button>
+          <div id="card-result" style="display: none; margin-top: 1.2rem"></div>
+        </div>
         <!-- 痛點共鳴區 -->
         <div style="background:rgba(80,10,100,0.25);border:1px solid rgba(212,175,55,0.3);border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:1rem;">
           <div style="color:var(--gold-light);font-size:0.9rem;font-weight:700;margin-bottom:0.7rem;text-align:center;letter-spacing:1px;">✦ 你是否正卡在這些困境裡？✦</div>
@@ -810,45 +849,6 @@
           </div>
         </div>
 
-        <div
-          id="draw-section"
-          style="
-            border: 2px solid var(--gold);
-            border-radius: 14px;
-            padding: 1.4rem 1.2rem 1.6rem;
-            background: rgba(50, 10, 90, 0.3);
-            text-align: center;
-          "
-        >
-          <div class="box-title" style="font-size: 1.15rem; letter-spacing: 3px; margin-bottom: 0.4rem">
-            🔮 高我神諭卡・抽牌選精油
-          </div>
-          <p style="color: var(--text-main); font-size: 0.88rem; margin-bottom: 0.5rem">你的靈魂，正在等待被看見。</p>
-          <p style="color: var(--gold-muted); font-size: 0.82rem; margin-bottom: 1rem">
-            靜心片刻，在心中默問：<br />「<em>此刻，我最需要什麼能量的支持？</em>」<br />然後，讓你的高我為你選兩張牌⋯⋯
-          </p>
-          <button
-            id="draw-btn"
-            onclick="drawCard()"
-            style="
-              background: linear-gradient(135deg, #7b2d8b, #d4af37);
-              color: #fff;
-              font-weight: 700;
-              font-size: 1.05rem;
-              padding: 0.85rem 2rem;
-              border: none;
-              border-radius: 8px;
-              cursor: pointer;
-              letter-spacing: 2px;
-              width: 100%;
-              max-width: 320px;
-              font-family: 'Noto Serif TC', serif;
-            "
-          >
-            ✨ 抽兩張牌 ✨
-          </button>
-          <div id="card-result" style="display: none; margin-top: 1.2rem"></div>
-        </div>
 
         <!-- 完整解鎖示範 -->
         <div style="margin-top:1.4rem;">
