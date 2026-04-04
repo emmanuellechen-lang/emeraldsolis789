@@ -822,21 +822,7 @@
           </div>
         </div>
 
-        <script>
-        function copyAcct() {
-          navigator.clipboard.writeText('056540386131').then(function() {
-            var btn = document.getElementById('copy-btn');
-            btn.textContent = '✅ 已複製！';
-            btn.style.background = 'rgba(6,199,85,0.4)';
-            setTimeout(function(){ btn.textContent = '📋 複製帳號'; btn.style.background = 'rgba(6,199,85,0.2)'; }, 2000);
-          }).catch(function(){
-            var t = document.getElementById('acct-num');
-            var r = document.createRange(); r.selectNode(t);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(r);
-          });
-        }
-        <\/script>
+
 
         <!-- 老巫解讀特色 -->
         <div style="background:rgba(30,8,60,0.5);border:1px solid rgba(150,80,200,0.35);border-radius:10px;padding:0.9rem 1rem;margin-bottom:1rem;text-align:center;">
@@ -1848,22 +1834,7 @@
           <a href="https://line.me/R/ti/p/@emeraldsolis777" target="_blank" style="display:block;background:#06C755;color:#fff;font-weight:700;font-size:0.95rem;padding:0.8rem;border-radius:8px;text-decoration:none;text-align:center;letter-spacing:1px;">📲 LINE 私訊老巫・開始你的魔法之旅</a>
         </div>
 
-        <script>
-          function openLightbox(src) {
-            var lb = document.getElementById('testi-lightbox');
-            var img = document.getElementById('testi-lightbox-img');
-            img.src = src;
-            lb.classList.add('open');
-            document.body.style.overflow = 'hidden';
-          }
-          function closeLightbox() {
-            document.getElementById('testi-lightbox').classList.remove('open');
-            document.body.style.overflow = '';
-          }
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-          });
-        <\/script>
+
 
       </section>
 
@@ -1878,6 +1849,33 @@
     </div>
 
     <script>
+function copyAcct() {
+  navigator.clipboard.writeText('056540386131').then(function() {
+    var btn = document.getElementById('copy-btn');
+    btn.textContent = '✅ 已複製！';
+    btn.style.background = 'rgba(6,199,85,0.4)';
+    setTimeout(function(){ btn.textContent = '📋 複製帳號'; btn.style.background = 'rgba(6,199,85,0.2)'; }, 2000);
+  }).catch(function(){
+    var t = document.getElementById('acct-num');
+    var r = document.createRange(); r.selectNode(t);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+  });
+}
+function openLightbox(src) {
+  var lb = document.getElementById('testi-lightbox');
+  var img = document.getElementById('testi-lightbox-img');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('testi-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
 const BASE = 'https://emmanuellechen-lang.github.io/emeraldsolis789/';
 const CARDS = [
   {name:"真實的英雄",eng:"The True Hero",img:BASE+"cards-1-40.jpg",pos:"top",
