@@ -2514,8 +2514,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       var priceDiv = det.querySelector('.price');
       var lineBtn = det.querySelector('a.btn');
       if (!priceDiv || !lineBtn) return;
-      var nums = (priceDiv.textContent.match(/[\d,]+/g) || []).map(function (s) {
-        return parseInt(s.replace(/,/g, ''), 10);
+      var nums = (priceDiv.textContent.match(/NT\$[\d,]+/g) || []).map(function (s) {
+        return parseInt(s.replace(/[^\d]/g, ''), 10);
       });
       if (nums.length < 2) return;
       var price15 = nums[0], price30 = nums[1];
